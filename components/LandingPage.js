@@ -10,7 +10,7 @@ export default function LandingPage() {
           <div className="invisible md:visible w-52 h-52 bg-yellow-300 rounded-full absolute top-24 left-20 filter blur-xl opacity-50 -z-10 animate-blob"></div>
           <div className="mt-36 max-w-sm ">
             <p className="text-sm font-semibold">Designed by insinyur</p>
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-10 bg-emerald-400">
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-10">
               Delicious Taste Refreshing and Natural
             </h1>
             <p className="text-base font-normal leading-8">
@@ -30,7 +30,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="pt-28 invisible md:visible">
+        <div className="md:pt-28 hidden md:block">
           <div>
             <img
               src="/asset/assetsHomepage/itemMenu.png"
