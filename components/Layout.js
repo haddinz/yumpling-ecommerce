@@ -2,7 +2,7 @@
 import Head from "next/head";
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { signOut, useSession } from "next-auth/react";
 import { Store } from "../utils/store";
@@ -35,7 +35,7 @@ export default function Layout({ title, children }) {
         const { data } = await axios.get("/api/products/category");
         setCategory(data);
       } catch (error) {
-        toast.error("Categories Not Found");
+        console.log('Fectd Categories')
       }
     };
     fetchCategories();
