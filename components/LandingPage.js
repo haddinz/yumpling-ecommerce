@@ -8,9 +8,9 @@ export default function LandingPage() {
       <div className="grid grid-cols-2 m-auto w-11/12 md:max-w-6xl">
         <div>
           <div className="invisible md:visible w-52 h-52 bg-yellow-300 rounded-full absolute top-24 left-20 filter blur-xl opacity-50 -z-10 animate-blob"></div>
-          <div className="mt-36 w-96">
+          <div className="mt-36 max-w-sm ">
             <p className="text-sm font-semibold">Designed by insinyur</p>
-            <h1 className="text-5xl font-bold leading-tight">
+            <h1 className="text-5xl font-bold leading-tight mb-10">
               Delicious Taste Refreshing and Natural
             </h1>
             <p className="text-base font-normal leading-8">
