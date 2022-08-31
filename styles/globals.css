@@ -1,4 +1,12 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -13,4 +21,64 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.active{
+  @apply bg-footer-background shadow-lg rounded-lg p-5
+}
+
+.nonActive{
+  @apply rounded-lg p-5 my-2
+}
+
+.containerBox{
+  @apply m-auto mt-20 mb-10 bg-footer-background p-5 rounded-lg w-11/12 md:max-w-6xl
+}
+
+.placeContent {
+  @apply m-auto w-11/12 md:max-w-6xl
+}
+
+.card {
+  @apply shadow-lg rounded-lg p-5
+}
+
+.subTitle {
+  @apply font-semibold text-xl mb-3
+}
+
+.success {
+  @apply text-center font-semibold bg-emerald-300 text-emerald-500 rounded-lg p-3
+}
+
+.alert {
+  @apply text-center font-semibold bg-red-300 text-red-500 rounded-lg p-3
+}
+
+.warning {
+  @apply text-center font-semibold bg-amber-300 text-amber-500 rounded-lg p-3
+}
+
+.button {
+  @apply font-semibold w-full bg-amber-300 hover:bg-amber-500 rounded text-white  p-3
+}
+
+.buttonAlert {
+  @apply font-semibold w-full bg-red-500 hover:bg-red-700 rounded text-white  p-3
+}
+
+.offButton {
+  @apply font-semibold w-full bg-slate-300 rounded text-white  p-3
+}
+
+.linkText {
+  @apply text-amber-300 font-semibold my-5 hover:text-amber-500
+}
+
+.successText {
+  @apply text-emerald-500
+}
+
+.dangerText {
+  @apply text-red-500
 }
