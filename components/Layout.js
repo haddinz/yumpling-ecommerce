@@ -35,7 +35,7 @@ export default function Layout({ title, children }) {
         const { data } = await axios.get("/api/products/category");
         setCategory(data);
       } catch (error) {
-        console.log('Fectd Categories')
+        console.log("Fecth Categories");
       }
     };
     fetchCategories();
@@ -103,10 +103,10 @@ export default function Layout({ title, children }) {
                     </Menu.Item>
                   ))}
                   <Menu.Item className="w-full hover:bg-slate-100 block p-2 rounded-sm">
-                      <DropdownLink href="/product/menu" className=" w-full">
-                        See All Menu
-                      </DropdownLink>
-                    </Menu.Item>
+                    <DropdownLink href="/product/menu" className=" w-full">
+                      See All Menu
+                    </DropdownLink>
+                  </Menu.Item>
                 </Menu.Items>
               </Menu>
               <Link href="/#delivery">

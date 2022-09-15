@@ -8,6 +8,7 @@ import axios from "axios";
 import db from "../../../utils/db";
 import Product from "../../../models/Product";
 import { useRouter } from "next/router";
+import Motion from "../../../styles/motion";
 // import data from "../../../utils/data";
 
 export default function ProductItems(props) {
@@ -54,79 +55,95 @@ export default function ProductItems(props) {
 
   return (
     <Layout title={product.name}>
-      <div className="container w-4/5 m-auto mt-32">
-        <div>
-          <Link href={"/product/menu"}>
-            <p className="text-link font-semibold my-5 hover:text-amber-300 cursor-pointer">
-              back to menus
-            </p>
-          </Link>
-        </div>
-        <div className="grid md:grid-cols-3 md:gap-3">
-          <div className="relative flex justify-center">
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={250}
-              height={250}
-            ></Image>
-            {product.countInStock === 0 && (
-              <div className="w-full h-full absolute top-24 left-0">
-                <p className="p-5 bg-red-500 text-white text-center rounded-full font-semibold">
-                  Product Not In Stock Now
-                </p>
-              </div>
-            )}
+      <Motion.parent>
+        <div className="container w-4/5 m-auto mt-32">
+          <div>
+            <Link href={"/product/menu"}>
+              <p className="text-link font-semibold my-5 hover:text-amber-300 cursor-pointer">
+                back to menus
+              </p>
+            </Link>
           </div>
-
-          <div className="flex flex-col justify-center p-5">
-            <ul>
-              <li>
-                <h2 className="text-2xl font-bold">{product.name}</h2>
-              </li>
-              <li>
-                <p className="text-base">{product.category}</p>
-              </li>
-              <li>
-                <p className="text-base">
-                  {product.rating} of {product.numReviews} reviews
-                </p>
-              </li>
-              <li>
-                <p className="text-base">Description : {product.desciptions}</p>
-              </li>
-              <li>
-                <p className="text-base">
-                  Count In Stock : {product.countInStock}
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col justify-center">
-            <div className="m-2 shadow p-3">
-              <div className="flex justify-between mb-3 text-xl font-semibold">
-                <h2>Price</h2>
-                <h2>${product.price}</h2>
-              </div>
-              <div className="flex justify-between mb-3 text-xl font-semibold">
-                <h2>Stock</h2>
-                <h2>
-                  {product.countInStock > 0 ? "available" : "not available"}
-                </h2>
+          <Motion.stagger>
+            <div className="grid md:grid-cols-3 md:gap-3">
+              <div className="relative flex justify-center">
+                <Motion.img>
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={250}
+                    height={250}
+                  ></Image>
+                </Motion.img>
+                {product.countInStock === 0 && (
+                  <div className="w-full h-full absolute top-24 left-0">
+                    <p className="p-5 bg-red-500 text-white text-center rounded-full font-semibold">
+                      Product Not In Stock Now
+                    </p>
+                  </div>
+                )}
               </div>
 
-              <button
-                className="font-semibold w-full bg-amber-300 hover:bg-amber-400 p-2 rounded text-white"
-                onClick={addToCartHandler}
-              >
-                {" "} 
-                add to cart{" "}
-              </button>
+              <div className="flex flex-col justify-center p-5">
+                <ul>
+                  <Motion.fadeInUp>
+                    <li>
+                      <h2 className="text-2xl font-bold">{product.name}</h2>
+                    </li>
+                  </Motion.fadeInUp>
+                  <Motion.fadeInUp>
+                    <li>
+                      <p className="text-base">{product.category}</p>
+                    </li>
+                    <li>
+                      <p className="text-base">
+                        {product.rating} of {product.numReviews} reviews
+                      </p>
+                    </li>
+                    <li>
+                      <p className="text-base">
+                        Description : {product.desciptions}
+                      </p>
+                    </li>
+                    <li>
+                      <p className="text-base">
+                        Count In Stock : {product.countInStock}
+                      </p>
+                    </li>
+                  </Motion.fadeInUp>
+                </ul>
+              </div>
+
+              <div className="flex flex-col justify-center">
+                <Motion.fadeInUp>
+                  <div className="m-2 shadow p-3">
+                    <div className="flex justify-between mb-3 text-xl font-semibold">
+                      <h2>Price</h2>
+                      <h2>${product.price}</h2>
+                    </div>
+                    <div className="flex justify-between mb-3 text-xl font-semibold">
+                      <h2>Stock</h2>
+                      <h2>
+                        {product.countInStock > 0
+                          ? "available"
+                          : "not available"}
+                      </h2>
+                    </div>
+
+                    <button
+                      className="font-semibold w-full bg-amber-300 hover:bg-amber-400 p-2 rounded text-white"
+                      onClick={addToCartHandler}
+                    >
+                      {" "}
+                      add to cart{" "}
+                    </button>
+                  </div>
+                </Motion.fadeInUp>
+              </div>
             </div>
-          </div>
+          </Motion.stagger>
         </div>
-      </div>
+      </Motion.parent>
     </Layout>
   );
 }
