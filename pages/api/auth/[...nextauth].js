@@ -38,7 +38,6 @@ export default NextAuth({
           };
         }
         throw new Error("Invalid Email and Password");
-        // console.log("Erorr Mas");
       },
     }),
   ],

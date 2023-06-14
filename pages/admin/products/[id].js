@@ -245,7 +245,7 @@ function ProductsEdit() {
                 {...register("image", {
                   required: "please enter image",
                   pattern: {
-                    message: "please enter valid image",
+                    message: "please upload image",
                   },
                 })}
               ></input>

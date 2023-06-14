@@ -1,0 +1,69 @@
+
+Create Node Server {
+    1. npm init -y
+    2. tsconfig.json {
+        npm install --save-dev typescript ts-node-dev
+
+        {
+            "compilerOptions": {
+            "target": "es2015",
+            "outDir": "./build",
+            "strict": true,
+            "module": "commonjs",
+            "esModuleInterop": true,
+            "experimentalDecorators": true,
+            "emitDecoratorMetadata": true,
+            }
+        }
+    }
+
+    3. config eslint {
+        npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+        create .eslintrc.js folder
+    }
+
+    4. Create express Server {
+        npm install espress
+        npm install --save-dev types/express
+    }
+
+    5. Create src/index.ts
+    6. for runing dev node {
+        "dev": "ts-node-dev --respawn --transpile-only --files src/index.ts",
+        "build": "tsc",
+    }
+}
+
+Pay Order by PayPal = {
+    1. Create paypal developher account and get paypal client id
+        akunbaruyangke3@gmail.com ( @PAYPAL18 ) (PAYPAL18 developher)
+        haazjoullist22@gmail.com (paypal18) sandbox
+        
+    2. Next put paypal clientid inside .env file
+    3. Making api keyRoutes to SEND paypal clientID to the frontend by creating API
+    4. Creating new api in orderRoutes to UPDATE order paid when has been done pay with paypal 
+
+    5. Next defind two hooks on frontend to geting paypal clientID and update status order
+    6. Install react paypal and helmet container <PaypalScriptProvider>
+
+    7. Implement Button Paypal on Order page 
+}
+
+Create order istory = {
+    1. Creating API in Order router
+    2. Feacting api hook data from API in hook folder order
+    3. return it on folder history jsx 
+}
+
+Publish Website Online {
+    1. Making middleware to access frontend from backend with path
+}
+
+Github: {
+    fisabilillahgithub18
+}
+
+deploy: {
+    @heroku18
+}

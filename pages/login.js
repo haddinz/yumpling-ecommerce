@@ -22,7 +22,6 @@ export default function Login() {
     formState: { errors },
   } = useForm();
   const submitHandler = async ({ email, password }) => {
-    console.log(email, password);
     try {
       const result = await signIn( 'credentials', {
         redirect: false,
@@ -34,7 +33,6 @@ export default function Login() {
       }
     } catch (err) {
       toast.error(getError(err));
-      // window.alert("Erorr Mas")
     }
   };
 

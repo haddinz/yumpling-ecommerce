@@ -24,7 +24,6 @@ export default function Register() {
     formState: { errors },
   } = useForm();
   const submitHandler = async ({ name, email, password }) => {
-    console.log(email, password);
     try {
       await axios.post(`api/auth/register`, {
         name,
@@ -37,11 +36,10 @@ export default function Register() {
         password,
       });
       if (result.error) {
-        toast.error("Error Mas");
+        toast.error(getError());
       }
     } catch (err) {
       toast.error(getError(err));
-      // window.alert("Erorr Mas")
     }
   };
 
